@@ -32,7 +32,7 @@ class HomeLayout extends StatelessWidget {
             key: scaffoldKey,
             body: ConditionalBuilder(
               builder: (context) => cubit.screens[cubit.index],
-              condition: cubit.tasks.isNotEmpty,
+              condition: state is! AppGetDataBaseLoadingState,
               fallback: (context) =>
                   const Center(child: CircularProgressIndicator()),
             ),
